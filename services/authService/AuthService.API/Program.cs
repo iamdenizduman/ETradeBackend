@@ -1,7 +1,7 @@
 ﻿using AuthService.Application;
+using AuthService.Application.Models.Dtos;
 using AuthService.Infrastructure;
 using AuthService.Persistence;
-using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +33,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

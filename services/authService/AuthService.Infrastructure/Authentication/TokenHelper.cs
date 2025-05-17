@@ -23,9 +23,9 @@ namespace AuthService.Infrastructure.Authentication
             var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
             var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             var accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
-            var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaimDto, accessTokenExpiration);
+            var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaimDto, accessTokenExpiration);           
             var token = jwtSecurityTokenHandler.WriteToken(jwt);
-
+            
             return new AccessToken
             {
                 Token = token,
