@@ -58,7 +58,7 @@ Kullanıcının sisteme kayıt olmasını sağlayan servistir.
 
 ---
 
-### CatalogService.API
+### 📦 CatalogService.API
 
 #### 3. AddCategory - Kategori Kayıt Servisi
 
