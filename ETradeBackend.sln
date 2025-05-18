@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "catalogService", "catalogSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Domain", "services\catalogService\CatalogService.Domain\CatalogService.Domain.csproj", "{EEEA990F-E6AA-4718-A240-78EEB33CCF81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Application", "services\catalogService\CatalogService.Application\CatalogService.Application.csproj", "{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{EEEA990F-E6AA-4718-A240-78EEB33CCF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEEA990F-E6AA-4718-A240-78EEB33CCF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEEA990F-E6AA-4718-A240-78EEB33CCF81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{C7A43D85-316E-42C9-B783-F8828397536C} = {11BDD170-7A5C-4726-9095-D2D7A47399DC}
 		{193E03C5-9B53-40C1-958A-6DD27C6EDF13} = {4B6B12DF-25C4-40CF-B125-F417FF8C949F}
 		{EEEA990F-E6AA-4718-A240-78EEB33CCF81} = {193E03C5-9B53-40C1-958A-6DD27C6EDF13}
+		{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5} = {193E03C5-9B53-40C1-958A-6DD27C6EDF13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DDD307B-E3EC-4615-A3D0-160BBE7EE7C7}

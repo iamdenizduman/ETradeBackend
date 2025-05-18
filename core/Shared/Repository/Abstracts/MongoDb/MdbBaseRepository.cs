@@ -1,12 +1,11 @@
 ﻿using MongoDB.Driver;
-using Shared.Entity.Interfaces;
 using Shared.Repository.Interfaces;
 using System.Linq.Expressions;
 
 namespace Shared.Repository.Abstracts.MongoDb
 {
     public class MdbBaseRepository<T>: IMongoBaseRepository<T>
-        where T : class, IEntity
+        where T : class
     {
         private readonly MongoDbService _mongoDbService;
         private IMongoCollection<T> _collections;
