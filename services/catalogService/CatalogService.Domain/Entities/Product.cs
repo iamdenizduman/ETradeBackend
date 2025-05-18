@@ -1,6 +1,8 @@
 ﻿using CatalogService.Domain.Entities.Abstracts;
 using CatalogService.Domain.Exceptions;
 using CatalogService.Domain.ValueObjects;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace CatalogService.Domain.Entities
 {
@@ -10,6 +12,7 @@ namespace CatalogService.Domain.Entities
         public string Description { get; private set; }
         public Money Price { get; private set; }
         public string ImageUrl { get; private set; }
+        [BsonRepresentation(BsonType.String)]
         public Guid CategoryId { get; private set; }
         public Category Category { get; private set; }
         protected Product() { } 
