@@ -23,15 +23,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthService.API", "services
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "catalogService", "catalogService", "{193E03C5-9B53-40C1-958A-6DD27C6EDF13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Domain", "services\catalogService\CatalogService.Domain\CatalogService.Domain.csproj", "{EEEA990F-E6AA-4718-A240-78EEB33CCF81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Domain", "services\catalogService\CatalogService.Domain\CatalogService.Domain.csproj", "{EEEA990F-E6AA-4718-A240-78EEB33CCF81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Application", "services\catalogService\CatalogService.Application\CatalogService.Application.csproj", "{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Application", "services\catalogService\CatalogService.Application\CatalogService.Application.csproj", "{A4892196-1F4A-4EAA-AD4F-A10C8BC3A3F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Infrastructure", "services\catalogService\CatalogService.Infrastructure\CatalogService.Infrastructure.csproj", "{1E36153D-E1D4-4ADE-BA96-96745751C3F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Infrastructure", "services\catalogService\CatalogService.Infrastructure\CatalogService.Infrastructure.csproj", "{1E36153D-E1D4-4ADE-BA96-96745751C3F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.Persistence", "services\catalogService\CatalogService.Persistence\CatalogService.Persistence.csproj", "{BDA6C959-E784-407A-8C12-121235827782}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Persistence", "services\catalogService\CatalogService.Persistence\CatalogService.Persistence.csproj", "{BDA6C959-E784-407A-8C12-121235827782}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogService.API", "services\catalogService\CatalogService.API\CatalogService.API.csproj", "{4ACC8FD3-0B21-47EF-8422-49962DAFBFB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.API", "services\catalogService\CatalogService.API\CatalogService.API.csproj", "{4ACC8FD3-0B21-47EF-8422-49962DAFBFB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stockService", "stockService", "{9BF7E361-1CEE-4CBF-934F-112DB4C48005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockService.Domain", "services\stockService\StockService.Domain\StockService.Domain.csproj", "{1DF7006C-EEF6-44CA-999F-228A7C3FE9E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +87,10 @@ Global
 		{4ACC8FD3-0B21-47EF-8422-49962DAFBFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ACC8FD3-0B21-47EF-8422-49962DAFBFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ACC8FD3-0B21-47EF-8422-49962DAFBFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF7006C-EEF6-44CA-999F-228A7C3FE9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF7006C-EEF6-44CA-999F-228A7C3FE9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF7006C-EEF6-44CA-999F-228A7C3FE9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF7006C-EEF6-44CA-999F-228A7C3FE9E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +109,8 @@ Global
 		{1E36153D-E1D4-4ADE-BA96-96745751C3F7} = {193E03C5-9B53-40C1-958A-6DD27C6EDF13}
 		{BDA6C959-E784-407A-8C12-121235827782} = {193E03C5-9B53-40C1-958A-6DD27C6EDF13}
 		{4ACC8FD3-0B21-47EF-8422-49962DAFBFB8} = {193E03C5-9B53-40C1-958A-6DD27C6EDF13}
+		{9BF7E361-1CEE-4CBF-934F-112DB4C48005} = {4B6B12DF-25C4-40CF-B125-F417FF8C949F}
+		{1DF7006C-EEF6-44CA-999F-228A7C3FE9E1} = {9BF7E361-1CEE-4CBF-934F-112DB4C48005}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DDD307B-E3EC-4615-A3D0-160BBE7EE7C7}
