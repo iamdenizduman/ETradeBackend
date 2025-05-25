@@ -13,6 +13,12 @@ namespace StockService.Domain.Entities
 
         protected Stock() { }
 
+        public Stock(Guid productId, int quantity) 
+        {
+            ProductId = productId;
+            Quantity = quantity;
+        }
+
         public bool HasSufficientStock(int amount) => Quantity >= amount;
 
         public void Increase(int amount) => Quantity += amount;
