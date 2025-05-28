@@ -158,3 +158,30 @@ Kategorinin getirdiği servistir.
   "text": "Ürün başarıyla eklendi."
 }
 ```
+
+---
+
+### 📦 StockService.API
+
+#### 7. AddStock - Stock Kayıt Servisi
+
+Stok bilgisinin girildiği endpointtir.
+
+- **Request (POST /api/Stocks/AddStock):**
+
+```json
+{
+  "productId": "eb34786d-19bc-4c7e-8101-205905216eb1",
+  "quantity": 20
+}
+```
+
+- **Response:**
+
+```json
+{
+  "productId": "eb34786d-19bc-4c7e-8101-205905216eb1",
+  "isSuccess": true,
+  "text": null
+}
+```

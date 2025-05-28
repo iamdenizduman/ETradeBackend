@@ -7,6 +7,7 @@ namespace StockService.Domain.Entities.Abstracts
     {
         [BsonRepresentation(BsonType.String)]
         public Guid Id { get; protected set; }
+        public DateTime InsertDate { get; set; }
 
         protected Entity()
         {

@@ -17,6 +17,7 @@ namespace StockService.Domain.Entities
             StockId = stockId;
             Quantity = quantity;
             HistoryType = historyType;
+            InsertDate = DateTime.Now;
         }
     }
 }

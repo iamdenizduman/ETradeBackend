@@ -22,6 +22,7 @@ namespace StockService.Domain.Entities
         {
             ProductId = productId;
             Quantity = quantity;
+            InsertDate = DateTime.Now;
             AddDomainEvent(new StockCreatedEvent(productId, quantity));
         }
         public void AddDomainEvent(INotification eventItem)
