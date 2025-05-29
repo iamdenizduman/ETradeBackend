@@ -25,14 +25,7 @@ namespace StockService.Domain.Entities
             InsertDate = DateTime.Now;
             AddDomainEvent(new StockCreatedEvent(productId, quantity));
         }
-        public void AddDomainEvent(INotification eventItem)
-        {
-            _domainEvents.Add(eventItem);
-        }
-        public void ClearDomainEvents()
-        {
-            _domainEvents.Clear();
-        }
+        
         public bool HasSufficientStock(int amount) => Quantity >= amount;
 
         public void Added(int amount)
@@ -47,6 +40,22 @@ namespace StockService.Domain.Entities
                 throw new DomainException("Stok yeterli değil");
             Quantity -= amount;
             AddDomainEvent(new StockSoldEvent(ProductId, amount));
+        }
+
+        public void Cancelled(int amount)
+        {
+            Quantity += amount;
+            AddDomainEvent(new StockCancelledEvent(ProductId, amount));
+        }
+
+        public void AddDomainEvent(INotification eventItem)
+        {
+            _domainEvents.Add(eventItem);
+        }
+
+        public void ClearDomainEvents()
+        {
+            _domainEvents.Clear();
         }
     }
 }

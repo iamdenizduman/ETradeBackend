@@ -6,18 +6,18 @@ using StockService.Domain.Enums;
 
 namespace StockService.Application.Features.Events
 {
-    public class StockAddedEventHandler : INotificationHandler<StockAddedEvent>
+    public class StockCreatedEventHandler : INotificationHandler<StockCreatedEvent>
     {
         private readonly IStockHistoryRepository _historyRepository;
 
-        public StockAddedEventHandler(IStockHistoryRepository historyRepository)
+        public StockCreatedEventHandler(IStockHistoryRepository historyRepository)
         {
             _historyRepository = historyRepository;
         }
 
-        public async Task Handle(StockAddedEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(StockCreatedEvent notification, CancellationToken cancellationToken)
         {
-            var history = new StockHistory(notification.ProductId, notification.Quantity, StockHistoryType.Added);
+            var history = new StockHistory(notification.ProductId, notification.Quantity, StockHistoryType.Created);
             await _historyRepository.AddAsync(history);
         }
     }

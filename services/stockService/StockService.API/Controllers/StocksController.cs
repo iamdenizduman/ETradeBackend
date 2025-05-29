@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StockService.Application.Features.Stocks.AddStock;
+using StockService.Application.Features.Stocks.CreateStock;
 
 namespace StockService.API.Controllers
 {
@@ -13,6 +14,13 @@ namespace StockService.API.Controllers
         public StocksController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpPost(nameof(CreateStock))]
+        public async Task<IActionResult> CreateStock(CreateStockRequest request)
+        {
+            var res = await _mediator.Send(request);
+            return Ok(res);
         }
 
         [HttpPost(nameof(AddStock))]

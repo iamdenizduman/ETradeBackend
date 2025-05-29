@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using StockService.Application.Repository.Interfaces;
-using StockService.Domain.Entities;
 
 namespace StockService.Application.Features.Stocks.AddStock
 {
@@ -17,22 +16,37 @@ namespace StockService.Application.Features.Stocks.AddStock
 
         public async Task<AddStockResponse> Handle(AddStockRequest request, CancellationToken cancellationToken)
         {
-            var stock = new Stock(request.ProductId, request.Quantity);
             string errMsg = string.Empty;
             try
             {
-                await _stockRepository.AddAsync(stock);
+                var stock = await _stockRepository.GetAsync(s => s.ProductId.ToString() == request.ProductId.ToString());
+
+                if (stock == null)
+                {
+                    return new AddStockResponse
+                    {
+                        isSuccess = false,
+                        ProductId = request.ProductId,
+                        text = "Stok bulunamadı"
+                    };
+                }
+
+                stock!.Added(request.Quantity);
+                // to do: stock update
+
 
                 foreach (var domainEvent in stock.DomainEvents)
                 {
                     await _mediator.Publish(domainEvent, cancellationToken);
                 }
-                stock.ClearDomainEvents();
+
+                stock!.ClearDomainEvents();
 
                 return new AddStockResponse
                 {
                     isSuccess = true,
-                    ProductId = stock.ProductId
+                    ProductId = stock.ProductId,
+                    text = $"{request.Quantity} adet stok eklendi"
                 };
             }
             catch (Exception ex)
@@ -42,9 +56,10 @@ namespace StockService.Application.Features.Stocks.AddStock
             return new AddStockResponse
             {
                 isSuccess = false,
-                ProductId = stock.ProductId,
+                ProductId = request.ProductId,
                 text = errMsg
             };
         }
     }
+
 }
