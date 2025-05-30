@@ -30,5 +30,11 @@ namespace Shared.Repository.Abstracts.MongoDb
         {
             return await _collections.Find(predicate).SingleOrDefaultAsync();
         }
+
+        public async Task UpdateAsync(string id, T updatedEntity)
+        {
+            var filter = Builders<T>.Filter.Eq("Id", id);
+            await _collections.ReplaceOneAsync(filter, updatedEntity);
+        }
     }
 }

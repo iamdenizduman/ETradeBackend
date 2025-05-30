@@ -159,15 +159,52 @@ Kategorinin getirdiği servistir.
 }
 ```
 
+#### 7. GetAllProducts - Ürün Listeleme Servisi
+
+Ürünlerin listelendiği servistir.
+
+- **Request (GET /api/Products/GetAllProducts):**
+
+- **Response:**
+
+```json
+{
+  "getProductDtos": [
+    {
+      "id": "889697b5-723b-4c56-8e50-fa8a51a96a06",
+      "categoryId": "e0007b07-ec1f-4f16-8b1d-90760e3aa9ce",
+      "name": "Hp",
+      "price": {
+        "amount": 10000,
+        "currency": "TRY"
+      },
+      "image": "string"
+    },
+    {
+      "id": "eb34786d-19bc-4c7e-8101-205905216eb1",
+      "categoryId": "8a6684e5-609c-4b2a-89c6-2b82e5ca5f38",
+      "name": "Kablosuz Bluetooth Kulaklık",
+      "price": {
+        "amount": 149.99,
+        "currency": "TRY"
+      },
+      "image": "wireless-headphones.jpg"
+    }
+  ],
+  "isSuccess": true,
+  "text": "Ürünler başarıyla getirildi"
+}
+```
+
 ---
 
-### 📦 StockService.API
+### 🏷️ StockService.API
 
-#### 7. AddStock - Stock Kayıt Servisi
+#### 8. CreateStock - Stock Kayıt Servisi
 
-Stok bilgisinin girildiği endpointtir.
+Stok bilgisinin oluşturulduğu endpointtir. Ürün oluşturduktan sonra çağrılır.
 
-- **Request (POST /api/Stocks/AddStock):**
+- **Request (POST /api/Stocks/CreateStock):**
 
 ```json
 {
@@ -183,5 +220,28 @@ Stok bilgisinin girildiği endpointtir.
   "productId": "eb34786d-19bc-4c7e-8101-205905216eb1",
   "isSuccess": true,
   "text": null
+}
+```
+
+#### 9. AddStock - Stock Kayıt Servisi
+
+Stok bilgisinin arttırıldığı endpointtir.
+
+- **Request (POST /api/Stocks/AddStock):**
+
+```json
+{
+  "productId": "86781417-b2ce-49e1-96de-6c7f9096dddd",
+  "quantity": 10
+}
+```
+
+- **Response:**
+
+```json
+{
+  "productId": "86781417-b2ce-49e1-96de-6c7f9096dddd",
+  "isSuccess": true,
+  "text": "10 adet stok eklendi"
 }
 ```

@@ -7,5 +7,6 @@ namespace Shared.Repository.Interfaces
         Task AddAsync(T entity);
         Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null);
         Task<T> GetAsync(Expression<Func<T, bool>> predicate);
+        Task UpdateAsync(string id, T updatedEntity);
     }
 }

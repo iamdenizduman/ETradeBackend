@@ -32,8 +32,8 @@ namespace StockService.Application.Features.Stocks.AddStock
                 }
 
                 stock!.Added(request.Quantity);
-                // to do: stock update
-
+                
+                await _stockRepository.UpdateAsync(stock.Id.ToString(), stock);
 
                 foreach (var domainEvent in stock.DomainEvents)
                 {
