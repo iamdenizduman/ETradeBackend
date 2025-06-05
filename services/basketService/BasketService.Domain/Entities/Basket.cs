@@ -19,9 +19,10 @@ namespace BasketService.Domain.Entities
         public void AddItem(string productId, string productName, decimal unitPrice, int quantity = 1)
         {
             var existingItem = _items.FirstOrDefault(i => i.ProductId == productId);
+            
             if (existingItem != null)
             {
-                existingItem.IncreaseQuantity(quantity);
+                existingItem.SetQuantity(quantity);
             }
             else
             {
@@ -29,15 +30,13 @@ namespace BasketService.Domain.Entities
                 _items.Add(newItem);
             }
         }
-        public void DecreaseItemQuantity(string productId, int quantity = 1)
+        public void UpdateItemQuantity(string productId, int quantity = 1)
         {
             var item = _items.FirstOrDefault(i => i.ProductId == productId);
+            
             if (item == null) return;
 
-            item.DecreaseQuantity(quantity);
-
-            if (item.Quantity <= 0)
-                _items.Remove(item);
+            item.SetQuantity(quantity);
         }
         public void RemoveItem(string productId)
         {

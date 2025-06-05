@@ -25,23 +25,12 @@
             Quantity = quantity;
         }
 
-        public void IncreaseQuantity(int amount)
+        public void SetQuantity(int quantity)
         {
-            if (amount <= 0)
-                throw new ArgumentException("Amount must be greater than 0");
+            if (quantity < 1)
+                throw new ArgumentException("Quantity cannot be smaller than 1");
 
-            Quantity += amount;
-        }
-
-        public void DecreaseQuantity(int amount)
-        {
-            if (amount <= 0)
-                throw new ArgumentException("Amount must be greater than 0");
-
-            Quantity -= amount;
-
-            if (Quantity < 0)
-                throw new ArgumentException("Amount must be greater than 0");
+            Quantity = quantity;
         }
 
         public void UpdateUnitPrice(decimal newPrice)
